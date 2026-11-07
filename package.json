@@ -1,0 +1,22 @@
+{
+  "name": "five-map-locator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicativo Desktop Nativo de Localização de Mapas GTA V / FiveM",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @five-map/web build && pnpm --filter @five-map/electron dev",
+    "build": "pnpm --filter @five-map/web build && pnpm --filter @five-map/electron build",
+    "build:installer": "pnpm build && pnpm --filter @five-map/electron dist",
+    "test": "pnpm --filter @five-map/parser test && pnpm --filter @five-map/locator test",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.2"
+  }
+}

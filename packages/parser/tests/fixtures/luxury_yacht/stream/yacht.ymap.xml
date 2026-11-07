@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMapData>
+  <name>yacht_dock</name>
+  <streamingExtentsMin x="-1650.0" y="-1200.0" z="-5.0"/>
+  <streamingExtentsMax x="-1400.0" y="-950.0" z="35.0"/>
+  <entitiesExtentsMin x="-1600.0" y="-1150.0" z="0.0"/>
+  <entitiesExtentsMax x="-1450.0" y="-1000.0" z="25.0"/>
+  <entities>
+    <Item type="CMloInstanceDef">
+      <archetypeName>v_mp_mlo_yacht</archetypeName>
+      <position x="-1520.4" y="-1080.2" z="5.8"/>
+      <rotation x="0.0" y="0.0" z="0.7071" w="0.7071"/>
+    </Item>
+    <Item type="CEntityDef">
+      <archetypeName>yacht_shell</archetypeName>
+      <position x="-1520.4" y="-1080.2" z="5.8"/>
+      <rotation x="0.0" y="0.0" z="0.7071" w="0.7071"/>
+      <scaleXY value="1.0"/>
+      <scaleZ value="1.0"/>
+      <lodDist value="500.0"/>
+    </Item>
+  </entities>
+</CMapData>

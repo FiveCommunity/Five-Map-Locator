@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4096 4096" width="4096" height="4096">
+  <defs>
+    <radialGradient id="oceanGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#050814" />
+    </radialGradient>
+    <linearGradient id="desertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03" />
+      <stop offset="50%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#542407" />
+    </linearGradient>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <pattern id="gridPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <!-- Ocean Base -->
+  <rect width="4096" height="4096" fill="url(#oceanGrad)" />
+  <rect width="4096" height="4096" fill="url(#gridPattern)" />
+
+  <!-- Main San Andreas Island Silhouette -->
+  <g id="landmass" filter="drop-shadow(0px 0px 20px rgba(0,0,0,0.8))">
+    <!-- Main Island Land -->
+    <path d="
+      M 950 3600
+      C 800 3400, 650 3100, 750 2800
+      C 600 2500, 500 2000, 650 1600
+      C 700 1300, 950 1000, 1100 700
+      C 1300 400, 1800 300, 2100 400
+      C 2400 450, 2700 700, 2900 1000
+      C 3200 1400, 3100 1800, 3300 2200
+      C 3400 2500, 3100 2900, 2900 3200
+      C 2700 3500, 2400 3800, 2100 3850
+      C 1700 3900, 1200 3800, 950 3600 Z
+    " fill="#1e293b" stroke="#334155" stroke-width="6" />
+
+    <!-- Mountain Ranges / Chiliad (North) -->
+    <path d="
+      M 1400 900
+      C 1600 600, 2200 600, 2500 850
+      C 2700 1100, 2400 1400, 2100 1450
+      C 1700 1450, 1300 1200, 1400 900 Z
+    " fill="url(#mountainGrad)" stroke="#475569" stroke-width="4" />
+
+    <!-- Alamo Sea (Central Inland Water) -->
+    <path d="
+      M 1950 1700
+      C 2200 1650, 2600 1700, 2750 1850
+      C 2650 2050, 2250 2150, 1950 2050
+      C 1800 1950, 1850 1750, 1950 1700 Z
+    " fill="#082f49" stroke="#0284c7" stroke-width="4" />
+
+    <!-- Grand Senora Desert -->
+    <path d="
+      M 1700 2150
+      C 2100 2100, 2700 2100, 2950 2350
+      C 2850 2650, 2250 2750, 1800 2650
+      C 1650 2500, 1600 2300, 1700 2150 Z
+    " fill="url(#desertGrad)" opacity="0.6" />
+
+    <!-- Los Santos Urban Footprint (South) -->
+    <path d="
+      M 1200 2900
+      C 1500 2750, 2200 2750, 2600 2950
+      C 2800 3200, 2700 3600, 2400 3750
+      C 2000 3850, 1500 3750, 1200 3550
+      C 1050 3350, 1100 3050, 1200 2900 Z
+    " fill="#0f172a" stroke="#64748b" stroke-width="4" />
+
+    <!-- LSIA Airport Peninsula (South West) -->
+    <path d="
+      M 1150 3550
+      C 1000 3650, 900 3800, 1100 3900
+      C 1350 3950, 1500 3850, 1400 3700 Z
+    " fill="#020617" stroke="#38bdf8" stroke-width="3" />
+  </g>
+
+  <!-- Highways and Roads (Golden Arteries) -->
+  <g id="highways" stroke="#eab308" stroke-width="4" fill="none" opacity="0.75">
+    <!-- Great Ocean Highway (West Coast Loop) -->
+    <path d="M 1250 3800 C 950 3500, 800 2800, 750 2000 C 700 1300, 1100 700, 1700 450 C 2300 450, 2800 700, 3100 1400 C 3250 2000, 3050 2800, 2750 3400" />
+    <!-- Senora Freeway (Central Spine) -->
+    <path d="M 2100 3700 L 2100 2700 C 2150 2300, 2450 1900, 2850 1700 L 2950 1200" />
+    <!-- Del Perro Freeway (East-West LS) -->
+    <path d="M 1050 3200 C 1450 3250, 2100 3200, 2650 3300" stroke-width="6" stroke="#f59e0b" />
+  </g>
+
+  <!-- Major Labels -->
+  <g id="labels" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" text-anchor="middle">
+    <!-- Mount Chiliad -->
+    <text x="2000" y="800" font-size="42" fill="#94a3b8" letter-spacing="4">MOUNT CHILIAD</text>
+    <text x="2000" y="835" font-size="24" fill="#64748b">806m Peak</text>
+
+    <!-- Paleto Bay -->
+    <text x="1450" y="550" font-size="36" fill="#cbd5e1" letter-spacing="2">PALETO BAY</text>
+
+    <!-- Alamo Sea -->
+    <text x="2350" y="1900" font-size="38" fill="#38bdf8" letter-spacing="3">ALAMO SEA</text>
+
+    <!-- Sandy Shores -->
+    <text x="2450" y="2250" font-size="36" fill="#d97706" letter-spacing="2">SANDY SHORES</text>
+
+    <!-- Fort Zancudo -->
+    <text x="1050" y="1950" font-size="34" fill="#ef4444" letter-spacing="2">FORT ZANCUDO</text>
+
+    <!-- Vinewood -->
+    <text x="1950" y="2950" font-size="44" fill="#e2e8f0" letter-spacing="6">VINEWOOD</text>
+
+    <!-- Downtown Los Santos -->
+    <text x="1950" y="3350" font-size="52" fill="#a855f7" letter-spacing="6">DOWNTOWN LOS SANTOS</text>
+
+    <!-- Vespucci Beach -->
+    <text x="1300" y="3350" font-size="36" fill="#38bdf8" letter-spacing="2">VESPUCCI BEACH</text>
+
+    <!-- LSIA -->
+    <text x="1250" y="3800" font-size="34" fill="#60a5fa" letter-spacing="3">LOS SANTOS INT. AIRPORT</text>
+  </g>
+
+  <!-- World Coordinate Crosshair Markers -->
+  <g id="coordinates_grid" stroke="#6366f1" stroke-width="1.5" opacity="0.6">
+    <!-- Center (0, 0) crosshair -->
+    <line x1="1516" y1="2891" x2="1516" y2="3091" stroke-width="3" stroke="#a855f7" />
+    <line x1="1416" y1="2991" x2="1616" y2="2991" stroke-width="3" stroke="#a855f7" />
+    <circle cx="1516" cy="2991" r="16" fill="none" stroke="#a855f7" stroke-width="3" />
+    <text x="1516" y="3035" font-family="monospace" font-size="20" fill="#c084fc" text-anchor="middle" font-weight="bold">ORIGIN (0, 0)</text>
+  </g>
+
+  <!-- Compass Rose -->
+  <g id="compass" transform="translate(3700, 400)">
+    <circle cx="0" cy="0" r="120" fill="#0f172a" stroke="#334155" stroke-width="4" opacity="0.8" />
+    <polygon points="0,-100 20,-20 0,-35" fill="#ef4444" />
+    <polygon points="0,-100 -20,-20 0,-35" fill="#b91c1c" />
+    <polygon points="0,100 20,20 0,35" fill="#94a3b8" />
+    <polygon points="0,100 -20,20 0,35" fill="#64748b" />
+    <text x="0" y="-115" font-family="sans-serif" font-size="28" fill="#ef4444" font-weight="900" text-anchor="middle">N</text>
+  </g>
+</svg>

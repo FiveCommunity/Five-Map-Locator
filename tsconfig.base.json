@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@five-map/shared": ["../../packages/shared/src/index.ts"],
+      "@five-map/parser": ["../../packages/parser/src/index.ts"],
+      "@five-map/locator": ["../../packages/locator/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

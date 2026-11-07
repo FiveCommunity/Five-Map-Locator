@@ -1,0 +1,399 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Five Map — Linguagem Visual Inspirada no macOS Sequoia / Apple Maps
+  Superfícies translúcidas com vibrância, tipografia óptica (-apple-system / Inter),
+  sombras ambientais difusas e curvas de mola nativas (cubic-bezier(0.32, 0.72, 0, 1)).
+*/
+@layer base {
+  :root {
+    --canvas:      #F5F5F7;  /* Apple Alabaster Canvas */
+    --sheet:       #FFFFFF;  /* Superfícies elevadas puras */
+    --ink:         #1D1D1F;  /* Apple Space Black */
+    --ink-2:       #6E6E73;  /* Apple Secondary Label */
+    --hairline:    rgba(0, 0, 0, 0.075);
+    --apple-blue:  #0071E3;
+    --apple-blue-hover: #0077ED;
+
+    /* Curvas de mola nativas da Apple (iOS / macOS Sheet & Segmented Control) */
+    --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.22, 1.15, 0.36, 1);
+
+    --background: 240 11% 96%;
+    --foreground: 240 3% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 3% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 3% 12%;
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 93%;
+    --secondary-foreground: 240 3% 12%;
+    --muted: 240 9% 94%;
+    --muted-foreground: 240 2% 44%;
+    --accent: 210 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    --input: 240 6% 88%;
+    --ring: 210 100% 45%;
+    --radius: 0.875rem;
+  }
+
+  * {
+    border-color: var(--hairline);
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.32);
+    border-radius: 8px;
+  }
+
+  ::selection {
+    background: rgba(0, 113, 227, 0.18);
+    color: #1D1D1F;
+  }
+}
+
+@layer components {
+  /* Superfície agrupada estilo Ajustes do Sistema / Apple Maps */
+  .sheet {
+    background: #FFFFFF;
+    border-radius: 14px;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.03),
+      0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 220ms var(--ease-apple), transform 220ms var(--ease-apple);
+  }
+
+  .page-title {
+    font-size: 28px;
+    line-height: 1.16;
+    font-weight: 600;
+    letter-spacing: -0.024em;
+    color: #1D1D1F;
+  }
+
+  .page-lede {
+    font-size: 14px;
+    line-height: 1.48;
+    color: #6E6E73;
+    margin-top: 4px;
+    max-width: 62ch;
+  }
+
+  /* Botão Primário Apple (Cápsula suave Azul Sistema) */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 10px;
+    background-color: #0071E3;
+    padding: 8px 16px;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0, 113, 227, 0.24);
+    transition:
+      transform 150ms var(--ease-apple),
+      background-color 150ms ease,
+      box-shadow 180ms var(--ease-apple);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #0077ED;
+    box-shadow: 0 4px 14px rgba(0, 113, 227, 0.28);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: scale(0.968);
+    background-color: #0068D1;
+  }
+  .btn-primary:disabled {
+    cursor: not-allowed;
+    background-color: #E5E5EA;
+    color: #98989D;
+    box-shadow: none;
+  }
+
+  /* Botão Secundário Translúcido / Tátil */
+  .btn-quiet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #1D1D1F;
+    box-shadow:
+      0 0.5px 1px rgba(0, 0, 0, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.07);
+    transition:
+      transform 150ms var(--ease-apple),
+      background-color 150ms ease,
+      box-shadow 180ms var(--ease-apple);
+  }
+  .btn-quiet:hover:not(:disabled) {
+    background-color: #FAFAFC;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.1),
+      0 3px 8px rgba(0, 0, 0, 0.06),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.09);
+  }
+  .btn-quiet:active:not(:disabled) {
+    transform: scale(0.968);
+    background-color: #F0F0F5;
+  }
+
+  /* Campo de texto estilo macOS */
+  .field {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 8.5px 12px;
+    font-size: 13.5px;
+    color: #1D1D1F;
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 0, 0, 0.11),
+      0 1px 2px rgba(0, 0, 0, 0.02);
+    transition:
+      box-shadow 180ms var(--ease-apple),
+      background-color 150ms ease;
+  }
+  .field::placeholder {
+    color: #8E8E93;
+  }
+  .field:focus {
+    outline: none;
+    background-color: #FFFFFF;
+    box-shadow:
+      inset 0 0 0 1.5px #0071E3,
+      0 0 0 3.5px rgba(0, 113, 227, 0.18);
+  }
+
+  /* Controle Segmentado Nativo Apple (UISegmentedControl) */
+  .apple-segment {
+    position: relative;
+    background-color: rgba(118, 118, 128, 0.12);
+    border-radius: 10px;
+    padding: 3px;
+  }
+  .apple-segment-thumb {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    border-radius: 7.5px;
+    background-color: #FFFFFF;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.11),
+      0 0.5px 1px rgba(0, 0, 0, 0.07);
+    transition: transform 260ms var(--ease-apple);
+    will-change: transform;
+  }
+
+  .coord {
+    font-family: "SF Mono", var(--font-mono), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.015em;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6E6E73;
+  }
+}
+
+/* Superfície sutil para carregamento do mapa */
+.contours {
+  background-color: #FFFFFF;
+}
+
+/* Transição de rota estilo macOS View Transition */
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 5px, 0) scale(0.996);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+  }
+}
+.animate-page-enter {
+  animation: page-enter 250ms var(--ease-apple) both;
+}
+
+/* Entrada escalonada (stagger) suave */
+@keyframes item-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.stagger-item {
+  animation: item-rise 260ms var(--ease-apple) both;
+  animation-delay: calc(var(--i, 0) * 28ms);
+}
+
+/* Troca de ícone (Copiar -> Check) com mola Apple */
+@keyframes icon-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+    filter: blur(1.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+.animate-icon-pop {
+  animation: icon-pop 180ms var(--ease-spring) both;
+}
+
+/* Varredura luminosa na barra de progresso */
+@keyframes progress-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(220%); }
+}
+.progress-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: progress-shimmer 1.15s linear infinite;
+}
+
+/* Acordeão fluido em CSS Grid */
+.accordion-shell {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 280ms var(--ease-apple), opacity 200ms var(--ease-apple);
+}
+.accordion-shell[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Beacon pulsante estilo Apple Maps / Buscar (Find My) */
+@keyframes waypoint-sonar {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(2.55);
+    opacity: 0;
+  }
+}
+@keyframes waypoint-drop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+.gta-pin-enter {
+  animation: waypoint-drop 280ms var(--ease-spring) both;
+}
+.gta-pin-sonar {
+  animation: waypoint-sonar 2.2s var(--ease-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-page-enter,
+  .stagger-item,
+  .animate-icon-pop,
+  .gta-pin-enter,
+  .gta-pin-sonar,
+  .progress-shimmer::after {
+    animation: none !important;
+  }
+  .apple-segment-thumb,
+  .accordion-shell {
+    transition-duration: 0ms !important;
+  }
+}
+
+/* Scrollbar discreta estilo macOS */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Popups e controles do Leaflet com vidro translúcido Apple Maps */
+.leaflet-container { font-family: inherit; }
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: saturate(180%) blur(18px);
+  color: #1D1D1F !important;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14) !important;
+  animation: icon-pop 180ms var(--ease-apple) both;
+}
+.leaflet-popup-tip { background: rgba(255, 255, 255, 0.92) !important; }
+.leaflet-control-zoom {
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), inset 0 0 0 0.5px rgba(0, 0, 0, 0.1) !important;
+}
+.leaflet-control-zoom a {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: saturate(180%) blur(16px);
+  color: #1D1D1F !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  transition: background-color 140ms ease, transform 130ms var(--ease-apple) !important;
+}
+.leaflet-control-zoom a:hover { background: #FFFFFF !important; }
+.leaflet-control-zoom a:active { transform: scale(0.94); }

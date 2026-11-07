@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Drawable>
+  <BoundingBoxMin x="-15.0" y="-8.0" z="-2.0"/>
+  <BoundingBoxMax x="15.0" y="8.0" z="10.0"/>
+  <LodDist value="500.0"/>
+  <ShaderGroup>
+    <Shaders>
+      <Item type="CShader">
+        <Name>yacht_hull_white</Name>
+        <Parameters>
+          <Item type="CShaderParamTexture">
+            <Name>DiffuseSampler</Name>
+            <TextureName>yacht_diffuse</TextureName>
+          </Item>
+        </Parameters>
+      </Item>
+    </Shaders>
+  </ShaderGroup>
+  <LodGroup>
+    <Lod1>
+      <Models>
+        <Item>
+          <Geometries>
+            <Item>
+              <ShaderIndex value="0"/>
+              <BoundingBoxMin x="-15.0" y="-8.0" z="-2.0"/>
+              <BoundingBoxMax x="15.0" y="8.0" z="10.0"/>
+              <VertexBuffer>
+                <Data>
+                  -15.0 -8.0 0.0  0.0 0.0 1.0  0.0 0.0
+                   15.0 -8.0 0.0  0.0 0.0 1.0  1.0 0.0
+                   15.0  8.0 0.0  0.0 0.0 1.0  1.0 1.0
+                  -15.0  8.0 0.0  0.0 0.0 1.0  0.0 1.0
+                  -15.0 -8.0 6.0  0.0 1.0 0.0  0.0 0.0
+                   15.0 -8.0 6.0  0.0 1.0 0.0  1.0 0.0
+                </Data>
+              </VertexBuffer>
+              <IndexBuffer>
+                <Data>
+                  0 1 2 0 2 3
+                  0 4 5 0 5 1
+                </Data>
+              </IndexBuffer>
+            </Item>
+          </Geometries>
+        </Item>
+      </Models>
+    </Lod1>
+  </LodGroup>
+</Drawable>

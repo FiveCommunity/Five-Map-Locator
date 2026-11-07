@@ -1,0 +1,9 @@
+fx_version 'cerulean'
+game 'gta5'
+
+description 'Five Map Locator Test Fixture — MLO Yacht Map'
+version '1.0.0'
+
+this_is_a_map 'yes'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/yacht_interior.ytyp'

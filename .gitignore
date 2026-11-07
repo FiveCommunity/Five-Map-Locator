@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build & Packaged Binaries (use GitHub Releases for >100MB .exe files!)
+.next/
+out/
+dist/
+build/
+release/
+apps/electron/web/
+*.tsbuildinfo
+
+# Local Shortcuts & Private Signing Keys
+*.lnk
+*.pfx
+*.p12
+certs/
+
+# Local Databases & Temp Uploads
+.five-map-locator/
+fml_uploads/
+*.db
+*.log
+
+# Operating System
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment Variables
+.env
+.env.*
+!.env.example

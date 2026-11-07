@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CMapTypes>
+  <name>yacht_interior</name>
+  <archetypes>
+    <Item type="CMloArchetypeDef">
+      <name>v_mp_mlo_yacht</name>
+      <bbMin x="-16.0" y="-9.0" z="-3.0"/>
+      <bbMax x="16.0" y="9.0" z="12.0"/>
+      <lodDist value="500.0"/>
+      <rooms>
+        <Item>
+          <name>lounge_deck</name>
+          <bbMin x="-10.0" y="-6.0" z="0.0"/>
+          <bbMax x="10.0" y="6.0" z="4.0"/>
+          <portalCount value="1"/>
+        </Item>
+        <Item>
+          <name>captain_bridge</name>
+          <bbMin x="-6.0" y="4.0" z="4.0"/>
+          <bbMax x="6.0" y="8.0" z="8.0"/>
+          <portalCount value="1"/>
+        </Item>
+      </rooms>
+      <portals>
+        <Item>
+          <from value="0"/>
+          <to value="1"/>
+          <flags value="0"/>
+          <corners>
+            <Item x="-1.5" y="4.0" z="0.0"/>
+            <Item x="1.5" y="4.0" z="0.0"/>
+            <Item x="1.5" y="4.0" z="3.0"/>
+            <Item x="-1.5" y="4.0" z="3.0"/>
+          </corners>
+        </Item>
+      </portals>
+      <entities>
+        <Item type="CEntityDef">
+          <archetypeName>yacht_shell</archetypeName>
+          <position x="0.0" y="0.0" z="0.0"/>
+          <rotation x="0.0" y="0.0" z="0.0" w="1.0"/>
+        </Item>
+      </entities>
+    </Item>
+  </archetypes>
+</CMapTypes>

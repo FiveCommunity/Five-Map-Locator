@@ -1,0 +1,22 @@
+{
+  "name": "@five-map/electron",
+  "version": "1.0.0",
+  "description": "Five Map Locator — Aplicativo Nativo de Localização de Mapas GTA V / FiveM",
+  "author": "FiveCommunity",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "node scripts/bundle.mjs && electron .",
+    "build": "node scripts/bundle.mjs",
+    "dist": "electron-builder --config electron-builder.yml && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sign-and-hash.ps1",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@five-map/shared": "workspace:*",
+    "@five-map/parser": "workspace:*",
+    "@five-map/locator": "workspace:*",
+    "electron": "^33.2.0",
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.1",
+    "electron-builder": "^25.1.8"
+  }
+}

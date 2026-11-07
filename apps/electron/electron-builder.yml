@@ -1,0 +1,33 @@
+appId: com.fivecommunity.fivemaplocator
+productName: Five Map Locator
+copyright: Copyright © 2026 FiveCommunity
+
+directories:
+  output: ../../release
+  buildResources: assets
+
+npmRebuild: false
+afterPack: ./scripts/after-pack.cjs
+
+files:
+  - "dist/**/*"
+  - "package.json"
+
+extraResources:
+  - from: web
+    to: web
+    filter:
+      - "**/*"
+  - from: assets/icon.ico
+    to: icon.ico
+
+win:
+  icon: assets/icon.ico
+  signAndEditExecutable: true
+  target:
+    - target: portable
+      arch:
+        - x64
+
+portable:
+  artifactName: "Five Map Locator.exe"
