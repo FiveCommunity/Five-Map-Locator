@@ -9,17 +9,19 @@
 
 ## Passo 1 — Subir o Código-Fonte para o GitHub
 
-1. Crie um repositório vazio no GitHub (ex.: `five-map-locator`) **sem** marcar "Add README" (pois o projeto já tem um `README.md` completo).
-2. Abra o PowerShell na pasta do projeto e rode:
+Como você já criou o repositório no GitHub com a licença **GNU General Public License v3.0 (GPL-3.0)**, abra o terminal na pasta `1-Codigo-Fonte-GitHub` no seu PC e rode:
 
 ```powershell
 git init
+git branch -M main
+git remote add origin https://github.com/SEU_USUARIO/SEU_REPO.git
+git pull origin main --allow-unrelated-histories --no-edit
 git add .
 git commit -m "feat: Five Map Locator v1.0.0 — app nativo Windows com DLLs embutidas e UI estilo Apple"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/five-map-locator.git
 git push -u origin main
 ```
+
+*(Dica: se estiver usando o **GitHub Desktop**, é ainda mais fácil: clique em **Clone Repository**, escolha seu repositório do GitHub, cole os arquivos de `1-Codigo-Fonte-GitHub` dentro da pasta clonada, escreva a mensagem de commit e clique em **Push origin**!)*
 
 ---
 

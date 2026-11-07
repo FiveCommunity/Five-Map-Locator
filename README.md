@@ -5,7 +5,7 @@ Aplicativo desktop **100% nativo para Windows** que localiza automaticamente map
 [![YouTube](https://img.shields.io/badge/YouTube-@bkviniofc-FF3B30?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/@bkviniofc)
 [![Discord](https://img.shields.io/badge/Discord-FiveCommunity-5856D6?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/fivecommunity)
 [![Platform](https://img.shields.io/badge/Windows-x64%20Nativo-0071E3?style=flat-square&logo=windows&logoColor=white)](#download-executável-pronto)
-[![License](https://img.shields.io/badge/Licença-MIT-34C759?style=flat-square)](./LICENSE)
+[![License](https://img.shields.io/badge/Licença-GPL--3.0-0071E3?style=flat-square)](./LICENSE)
 
 ---
 
